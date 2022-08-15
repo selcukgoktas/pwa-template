@@ -13,9 +13,6 @@
 		<link type="text/css" href="/css/styles.css" rel="stylesheet" />
 		<script type="text/javascript" src="/js/materialize.js"></script>
 
-		<!-- API Scrip -->
-		<script type="text/javascript" src="/js/api.js"></script>
-
 		<link rel="manifest" href="/manifest.json" />
 
 		<!-- ios support -->
@@ -37,6 +34,30 @@
 		</nav>
 
 		<!-- side nav -->
+		<script src="/js/api.js"></script>
+
+		<script>
+			console.log('hello');
+
+			// auth token
+			let url = 'https://login.salesforce.com/services/oauth2/token?';
+			url += 'grant_type=password&';
+			url +=
+				'client_id=3MVG9gTv.DiE8cKRqXODT1s9iiQ7F1VEclGXVfpizhMrPoTFkeqRzdQLhrOHUGtu5OeVZI2s4BfFzKs3_GxGd&';
+			url +=
+				'client_secret=E414610E3E5349221F0EEE72D2C9FCC5E224D5333269E7FA3161A1DFA2BF907C&';
+			url += 'username=x@integration.com&';
+			url += 'password=Q!weasd001B40QSVTIr9wqhWQWr7vxNNa4';
+
+			console.log(url);
+
+			fetch(url, {
+				method: 'POST',
+			})
+				.then((res) => res.json())
+				.then((resJson) => console.log(resJson))
+				.catch((err) => console.log(err));
+		</script>
 
 		<ul id="side-menu" class="sidenav side-menu">
 			<li><a class="subheader">CruiseNYatch</a></li>
