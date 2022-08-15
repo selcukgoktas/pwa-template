@@ -46,46 +46,23 @@
 				'client_id=3MVG9gTv.DiE8cKRqXODT1s9iiQ7F1VEclGXVfpizhMrPoTFkeqRzdQLhrOHUGtu5OeVZI2s4BfFzKs3_GxGd&';
 			url +=
 				'client_secret=E414610E3E5349221F0EEE72D2C9FCC5E224D5333269E7FA3161A1DFA2BF907C&';
-			url += 'username=x@integration.com&';
-			url += 'password=Q!weasd001B40QSVTIr9wqhWQWr7vxNNa4';
+			url += 'username=';
+			url += 'password=';
 
 			console.log(url);
 
-			fetch(url, {
-				method: 'POST',
-				mode: 'cors'
+		fetch(url, {
+			method: 'POST', 
+			mode:'cors',
+     
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+			'Access-Control-Allow-Origin': 'https://login.salesforce.com',
+			'Access-Control-Allow-Methods':'GET,POST'    
+    }
 			})
 				.then((res) => console.log(res))			
 				.catch((err) => console.log(err));
-
-
-
-// Example POST method implementation:
-async function postData(url) {
-  
-  const response = await fetch(url, {
-    method: 'POST', 
-    mode: 'no-cors', // no-cors, *cors, same-origin
-   
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'    
-    },
-  
-    body: JSON.stringify(data) 
-  });
-  return response.json(); 
-}
-
-
-
-
-postData(url)
-  .then((data) => {
-    console.log(data); 
-  });
-
-
-
 
 
 		</script>
