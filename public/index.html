@@ -53,6 +53,7 @@
 
 			fetch(url, {
 				method: 'POST',
+				mode: 'cors',
 			})
 				.then((res) => res.json())
 				.then((resJson) => console.log(resJson))
